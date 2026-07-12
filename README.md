@@ -41,7 +41,7 @@ m04_manipulation/README.md
 | 2 | Python 스크립팅 API — standalone 로봇 제어 | [02-python-scripting-api.md](02-python-scripting-api.md) | [m02_python_api/README.md](m02_python_api/README.md) | 완료 |
 | 3 | PhysX 심화 — 떨림/통과/반전/무게중심 4대 진단 | [03-physx-deep-dive.md](03-physx-deep-dive.md) | [m03_physx/README.md](m03_physx/README.md) | 완료 (무게중심 실습은 원인 불명으로 미해결 기록) |
 | 4 | 로봇 임포트와 매니퓰레이션 — Franka Pick-and-Place | [04-robot-import-and-manipulation.md](04-robot-import-and-manipulation.md) | [m04_manipulation/README.md](m04_manipulation/README.md) | 완료 |
-| 5 | 센서 & OmniGraph | 예정 | — | 예정 |
+| 5 | 센서 & OmniGraph — 카메라/Lidar/IMU/접촉, 카메라 인식 pick 과제 | [05-sensors-and-omnigraph.md](05-sensors-and-omnigraph.md) | [m05_sensors/README.md](m05_sensors/README.md) | 완료 |
 | 6 | Replicator 합성 데이터 | 예정 | — | 예정 |
 | 7 | Isaac Lab 커스텀 태스크 | 예정 | — | 예정 |
 | 8 | 캡스톤 | 예정 | — | 예정 |
@@ -62,6 +62,8 @@ m04_manipulation/README.md
 - **PhysX Position Drive는 오차(target - 현재값) 기반으로 힘을 계산한다.** Target을 안 바꾸고 stiffness/damping만 바꾸면 아무 일도 안 일어난다 ([Module 3](m03_physx/README.md#진단-1--관절-떨림jitter) 참고).
 - **바닥에 놓는 오브젝트는 Translate Z를 half-height로 맞춰야 한다.** 살짝이라도 떠 있으면 물리 스텝이 시작되자마자 조용히 떨어져서, 이후 좌표 계산이 전부 틀어진다 ([Module 4](m04_manipulation/README.md#51-첫-번째-실패-큐브가-바닥에-떠-있었다) 참고).
 - **Isaac Sim의 다양한 `Articulation` 관련 클래스는 배치(batched) 버전과 단일(single) 버전이 파라미터 이름과 액션 타입이 다르다** (`prim_path` vs `prim_paths_expr`, `ArticulationAction` vs `ArticulationActions`) — 섞어 쓰면 헷갈리는 에러가 난다.
+- **IMU/접촉 센서는 반드시 실제 물리 바디의 자식으로 붙여야 한다.** 컨테이너 Xform(예: articulation root)에 붙이면 값이 절대 안 바뀐다 — Module 4/5에서 반복 확인 ([Module 5](m05_sensors/README.md#3-imu--접촉-센서--python-api) 참고).
+- **instanceable USD 레퍼런스는 semantic label 상속을 막는다.** 조상 prim에 라벨을 걸어도 instanceable 자식 메시까지는 전파되지 않는다 — segmentation에서 물체가 안 잡히면 의심해볼 것 ([Module 5](m05_sensors/README.md#1-카메라-rgb--depth--segmentation) 참고).
 
 ## 라이선스 / 참고
 
