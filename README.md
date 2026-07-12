@@ -43,7 +43,7 @@ m04_manipulation/README.md
 | 4 | 로봇 임포트와 매니퓰레이션 — Franka Pick-and-Place | [04-robot-import-and-manipulation.md](04-robot-import-and-manipulation.md) | [m04_manipulation/README.md](m04_manipulation/README.md) | 완료 |
 | 5 | 센서 & OmniGraph — 카메라/Lidar/IMU/접촉, 카메라 인식 pick 과제 | [05-sensors-and-omnigraph.md](05-sensors-and-omnigraph.md) | [m05_sensors/README.md](m05_sensors/README.md) | 완료 |
 | 6 | Replicator 합성 데이터 — 도메인 랜덤화, 자동 라벨링(bbox/segmentation) | [06-replicator-synthetic-data.md](06-replicator-synthetic-data.md) | [m06_replicator/README.md](m06_replicator/README.md) | 완료 |
-| 7 | Isaac Lab 커스텀 태스크 | 예정 | — | 예정 |
+| 7 | Isaac Lab 커스텀 태스크 — Franka 큐브 밀기(Push) 직접 설계 | [07-isaac-lab-custom-task.md](07-isaac-lab-custom-task.md) | [m07_isaaclab_custom/README.md](m07_isaaclab_custom/README.md) | 완료 |
 | 8 | 캡스톤 | 예정 | — | 예정 |
 
 전체 커리큘럼 목표와 평가 기준은 [00-syllabus.md](00-syllabus.md) 참고.
