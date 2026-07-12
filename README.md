@@ -42,7 +42,7 @@ m04_manipulation/README.md
 | 3 | PhysX 심화 — 떨림/통과/반전/무게중심 4대 진단 | [03-physx-deep-dive.md](03-physx-deep-dive.md) | [m03_physx/README.md](m03_physx/README.md) | 완료 (무게중심 실습은 원인 불명으로 미해결 기록) |
 | 4 | 로봇 임포트와 매니퓰레이션 — Franka Pick-and-Place | [04-robot-import-and-manipulation.md](04-robot-import-and-manipulation.md) | [m04_manipulation/README.md](m04_manipulation/README.md) | 완료 |
 | 5 | 센서 & OmniGraph — 카메라/Lidar/IMU/접촉, 카메라 인식 pick 과제 | [05-sensors-and-omnigraph.md](05-sensors-and-omnigraph.md) | [m05_sensors/README.md](m05_sensors/README.md) | 완료 |
-| 6 | Replicator 합성 데이터 | 예정 | — | 예정 |
+| 6 | Replicator 합성 데이터 — 도메인 랜덤화, 자동 라벨링(bbox/segmentation) | [06-replicator-synthetic-data.md](06-replicator-synthetic-data.md) | [m06_replicator/README.md](m06_replicator/README.md) | 완료 |
 | 7 | Isaac Lab 커스텀 태스크 | 예정 | — | 예정 |
 | 8 | 캡스톤 | 예정 | — | 예정 |
 
@@ -66,6 +66,7 @@ m04_manipulation/README.md
 - **Isaac Sim의 다양한 `Articulation` 관련 클래스는 배치(batched) 버전과 단일(single) 버전이 파라미터 이름과 액션 타입이 다르다** (`prim_path` vs `prim_paths_expr`, `ArticulationAction` vs `ArticulationActions`) — 섞어 쓰면 헷갈리는 에러가 난다.
 - **IMU/접촉 센서는 반드시 실제 물리 바디의 자식으로 붙여야 한다.** 컨테이너 Xform(예: articulation root)에 붙이면 값이 절대 안 바뀐다 — Module 4/5에서 반복 확인 ([Module 5](m05_sensors/README.md#3-imu--접촉-센서--python-api) 참고).
 - **instanceable USD 레퍼런스는 semantic label 상속을 막는다.** 조상 prim에 라벨을 걸어도 instanceable 자식 메시까지는 전파되지 않는다 — segmentation에서 물체가 안 잡히면 의심해볼 것 ([Module 5](m05_sensors/README.md#1-카메라-rgb--depth--segmentation) 참고).
+- **`omni.replicator.core`만으로 씬을 만들면(즉 `isaacsim.core.api.World()`를 안 만들면) 조명을 아무리 세게 줘도 렌더 결과가 계속 새까맣다.** Replicator 단독 스크립트에서도 `World()` 생성이 사실상 필수 ([Module 6](m06_replicator/README.md#1-최소-replicator-스크립트) 참고).
 
 ## 라이선스 / 참고
 
