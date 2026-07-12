@@ -48,6 +48,8 @@ m04_manipulation/README.md
 
 전체 커리큘럼 목표와 평가 기준은 [00-syllabus.md](00-syllabus.md) 참고.
 
+지금까지 실습에서 실제로 사용한 Python API를 카테고리별로 정리한 문서: [api-reference.md](api-reference.md)
+
 ## 이 튜토리얼의 특징
 
 - **직접 실행 원칙**: GUI 클릭이든 Python 스크립트든, 실습 주체가 직접 실행하고 눈으로 본 결과만 기록했다. 대신 실행해보고 로그만 읽는 방식은 지양했다.
